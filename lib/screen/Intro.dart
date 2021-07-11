@@ -56,7 +56,7 @@ class IntroScreen extends StatelessWidget {
               fontColor: Colors.white,
               bgColor: Color(0xff35466A),
               borderColor: Color(0xff35466A),
-              borderRadius: 18,
+              borderRadius: 24,
               onPressed: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
                   return LoginScreen();
