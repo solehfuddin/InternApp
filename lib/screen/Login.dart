@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:internship_app/widget/WidgetAppbar.dart';
+import 'package:internship_app/widget/WidgetDynamicButton.dart';
 import 'package:internship_app/widget/WidgetIntroContent.dart';
+import 'package:internship_app/widget/WidgetIntroImage.dart';
 import 'package:internship_app/widget/WidgetIntroTitle.dart';
+import 'package:internship_app/widget/WidgetTextInput.dart';
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -25,8 +28,13 @@ class _LoginScreenState extends State<LoginScreen> {
                     Navigator.pop(context);
                   },
                 ),
+                WidgetIntroImage(
+                  imgWidth: 250,
+                  imgHeight: 250,
+                  localImg: 'images/internship.png',
+                ),
                 WidgetIntroTitle(
-                  spaceTop: 15,
+                  spaceTop: 5,
                   spaceLine: 7,
                   fontSize: 24,
                   primaryColor: Color(0xff35466A),
@@ -38,12 +46,26 @@ class _LoginScreenState extends State<LoginScreen> {
                 SizedBox(height: 15),
                 WidgetIntroContent(
                   description:
-                  'Langkah selanjutnya masukkan data berikut, supaya kamu bisa segera bergabung dan ajukan magang diperusahaan impianmu',
+                      'Langkah selanjutnya masukkan data berikut, supaya kamu bisa segera bergabung dan ajukan magang diperusahaan impianmu',
                   fontSize: 16,
                   fontFamily: 'Nunito',
                   fontWeight: FontWeight.w400,
                   fontColor: Color(0xff8F9095),
                 ),
+                WidgetTextInput(),
+                WidgetDynamicButton(
+                  outerPadding: 40,
+                  innerPadding: 10,
+                  fontSize: 20,
+                  borderRadius: 10,
+                  bgColor: Color(0xff35466A),
+                  borderColor: Color(0xff35466A),
+                  fontFamily: 'Nunito',
+                  fontWeight: FontWeight.w600,
+                  fontColor: Colors.white,
+                  title: "Daftarkan",
+                  onPressed: () {},
+                )
               ],
             ),
           ),
