@@ -40,11 +40,14 @@ class IntroScreen extends StatelessWidget {
             ),
             WidgetIntroContent(
               description:
-              'Temukan tempat magang sesuai keinginan dan raih kesempatan untuk gabung diperusahaan impianmu',
+                  'Temukan tempat magang sesuai keinginan dan raih kesempatan untuk gabung diperusahaan impianmu',
               fontSize: 16,
               fontFamily: 'Nunito',
               fontWeight: FontWeight.w400,
               fontColor: Color(0xff8F9095),
+            ),
+            SizedBox(
+              height: 30,
             ),
             WidgetDynamicButton(
               outerPadding: 40,

@@ -5,6 +5,7 @@ import 'package:internship_app/widget/WidgetIntroContent.dart';
 import 'package:internship_app/widget/WidgetIntroImage.dart';
 import 'package:internship_app/widget/WidgetIntroTitle.dart';
 import 'package:internship_app/widget/WidgetTextInput.dart';
+import 'package:internship_app/widget/WidgetTextTitle.dart';
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -12,12 +13,15 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  TextEditingController _controller = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Internship app',
       theme: ThemeData(),
       home: Scaffold(
+        backgroundColor: Colors.white,
         body: SingleChildScrollView(
           child: Container(
             color: Colors.white,
@@ -52,7 +56,31 @@ class _LoginScreenState extends State<LoginScreen> {
                   fontWeight: FontWeight.w400,
                   fontColor: Color(0xff8F9095),
                 ),
-                WidgetTextInput(),
+                SizedBox(
+                  height: 25,
+                ),
+                WidgetTextTitle(
+                  horizontalMargin: 40,
+                  textTitle: "Nama Lengkap",
+                  fontSize: 16,
+                  fontFamily: "Nunito",
+                  fontWeight: FontWeight.bold,
+                  textColor: Colors.black54,
+                ),
+                WidgetTextInput(
+                  horizontalMargin: 40,
+                  borderRadius: 10,
+                  fontSize: 16,
+                  fontFamily: "Nunito",
+                  fontWeight: FontWeight.w600,
+                  hintText: "Muhamad Solehfuddin",
+                  hintColor: Colors.grey,
+                  bgColor: Colors.white,
+                  controller: _controller,
+                ),
+                SizedBox(
+                  height: 25,
+                ),
                 WidgetDynamicButton(
                   outerPadding: 40,
                   innerPadding: 10,
@@ -64,13 +92,27 @@ class _LoginScreenState extends State<LoginScreen> {
                   fontWeight: FontWeight.w600,
                   fontColor: Colors.white,
                   title: "Daftarkan",
-                  onPressed: () {},
-                )
+                  onPressed: () {
+                    showDialog(
+                        context: context,
+                        builder: (context) {
+                          return AlertDialog(
+                            content: Text("Nama : ${_controller.text}"),
+                          );
+                        });
+                  },
+                ),
               ],
             ),
           ),
         ),
       ),
     );
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
   }
 }

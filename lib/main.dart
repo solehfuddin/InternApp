@@ -12,6 +12,7 @@ class MainApp extends StatelessWidget {
       title: "Internship app",
       theme: ThemeData(),
       home: Scaffold(
+        backgroundColor: Colors.white,
         body: IntroScreen(),
       ),
     );

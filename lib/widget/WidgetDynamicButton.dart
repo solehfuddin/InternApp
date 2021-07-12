@@ -35,7 +35,9 @@ class WidgetDynamicButton extends StatelessWidget {
       children: [
         Expanded(
           child: Padding(
-            padding: EdgeInsets.all(outerPadding),
+            padding: EdgeInsets.symmetric(
+              horizontal: outerPadding,
+            ),
             child: ElevatedButton(
               onPressed: onPressed,
               child: Padding(
