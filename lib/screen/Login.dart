@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:internship_app/screen/Home.dart';
 import 'package:internship_app/widget/WidgetAppbar.dart';
 import 'package:internship_app/widget/WidgetDynamicButton.dart';
 import 'package:internship_app/widget/WidgetIntroContent.dart';
@@ -93,14 +94,28 @@ class _LoginScreenState extends State<LoginScreen> {
                   fontColor: Colors.white,
                   title: "Daftarkan",
                   onPressed: () {
-                    showDialog(
-                        context: context,
-                        builder: (context) {
-                          return AlertDialog(
-                            content: Text("Nama : ${_controller.text}"),
-                          );
+                    if (_controller.text.isEmpty)
+                      {
+                        showDialog(
+                            context: context,
+                            builder: (context) {
+                              return AlertDialog(
+                                content: Text("Harap masukkan nama anda"),
+                              );
+                            });
+                      }
+                    else
+                      {
+                        Navigator.push(context, MaterialPageRoute(builder: (context) {
+                          return HomeScreen(name: _controller.text);
+                        })).then((value){
+                          _controller.clear();
                         });
+                      }
                   },
+                ),
+                SizedBox(
+                  height: 25,
                 ),
               ],
             ),

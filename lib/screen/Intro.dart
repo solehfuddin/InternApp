@@ -47,7 +47,7 @@ class IntroScreen extends StatelessWidget {
               fontColor: Color(0xff8F9095),
             ),
             SizedBox(
-              height: 30,
+              height: 25,
             ),
             WidgetDynamicButton(
               outerPadding: 40,
@@ -65,6 +65,9 @@ class IntroScreen extends StatelessWidget {
                   return LoginScreen();
                 }));
               },
+            ),
+            SizedBox(
+              height: 25,
             ),
           ],
         ),
