@@ -9,7 +9,12 @@ class WidgetHomeAppbar extends StatelessWidget {
   final bgColor;
   final imgProfile;
 
-  WidgetHomeAppbar({this.bgColor, this.padding, this.imgProfile, required this.name, required this.greeting});
+  WidgetHomeAppbar(
+      {this.bgColor,
+      this.padding,
+      this.imgProfile,
+      required this.name,
+      required this.greeting});
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +37,10 @@ class WidgetHomeAppbar extends StatelessWidget {
                 ),
               ),
               Container(
-                margin: EdgeInsets.only(left: 15, top: 13,),
+                margin: EdgeInsets.only(
+                  left: 15,
+                  top: 13,
+                ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -51,6 +59,7 @@ class WidgetHomeAppbar extends StatelessWidget {
                       name,
                       style: TextStyle(
                         color: Colors.white,
+                        fontFamily: 'Nunito',
                         fontWeight: FontWeight.w600,
                       ),
                     ),

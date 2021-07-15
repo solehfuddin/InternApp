@@ -20,7 +20,7 @@ class HomeScreen extends StatelessWidget {
             WidgetHomeAppbar(
               bgColor: Color(0xff304572),
               padding: 15,
-              imgProfile: 'images/intern.jpg',
+              imgProfile: 'images/person.jpg',
               greeting: 'Selamat Datang,',
               name: name!,
             ),
