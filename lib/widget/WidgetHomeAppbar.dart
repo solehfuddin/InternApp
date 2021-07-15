@@ -38,8 +38,8 @@ class WidgetHomeAppbar extends StatelessWidget {
               ),
               Container(
                 margin: EdgeInsets.only(
-                  left: 15,
-                  top: 13,
+                  left: 10,
+                  top: 8,
                 ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -70,7 +70,7 @@ class WidgetHomeAppbar extends StatelessWidget {
           ),
           Container(
             margin: EdgeInsets.only(
-              top: 10,
+              top: 8,
             ),
             child: IconButton(
               icon: Icon(

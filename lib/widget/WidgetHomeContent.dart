@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'WidgetInfo.dart';
+
 class WidgetHomeContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -18,12 +20,7 @@ class WidgetHomeContent extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Container(
-                  child: Text('AREA PENCARIAN'),
-                ),
-                Container(
-                  child: Text('AREA BANNER'),
-                ),
+                WidgetInfo(),
                 Container(
                   child: Text('AREA ACTIVE HIRING'),
                 ),
