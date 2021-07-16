@@ -22,10 +22,30 @@ class WidgetHomeContent extends StatelessWidget {
               children: [
                 WidgetInfo(),
                 Container(
-                  child: Text('AREA ACTIVE HIRING'),
+                  margin: EdgeInsets.symmetric(
+                    horizontal: 20,
+                    vertical: 10,
+                  ),
+                  child: Text(
+                    'Perusahaan Populer',
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
                 ),
                 Container(
-                  child: Text('AREA NEW INTERNSHIP'),
+                  margin: EdgeInsets.symmetric(
+                    horizontal: 20,
+                    vertical: 10,
+                  ),
+                  child: Text(
+                    'Perusahaan Baru',
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
                 ),
               ],
             ),
