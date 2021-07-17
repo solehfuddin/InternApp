@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:internship_app/widget/WidgetBaruDitambah.dart';
+import 'package:internship_app/widget/WidgetSedangProses.dart';
 
-import 'WidgetInfo.dart';
+import 'WidgetHomeTitle.dart';
 
 class WidgetHomeContent extends StatelessWidget {
   @override
@@ -20,32 +22,64 @@ class WidgetHomeContent extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                WidgetInfo(),
                 Container(
-                  margin: EdgeInsets.symmetric(
-                    horizontal: 20,
-                    vertical: 10,
-                  ),
-                  child: Text(
-                    'Perusahaan Populer',
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
+                  margin: EdgeInsets.all(20),
+                  child: Image.asset('images/banner.png'),
+                ),
+                WidgetHomeTitle(
+                  marginHor: 20,
+                  marginVer: 10,
+                  title: 'Sedang Diproses',
+                  fontSize: 16,
+                  fontWeight: FontWeight.w600,
                 ),
                 Container(
-                  margin: EdgeInsets.symmetric(
-                    horizontal: 20,
-                    vertical: 10,
+                  height: 230,
+                  child: ListView(
+                    scrollDirection: Axis.horizontal,
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.only(left: 20, right: 5),
+                        child: WidgetSedangProses(),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.all(5),
+                        child: WidgetSedangProses(),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(left: 5, right: 20),
+                        child: WidgetSedangProses(),
+                      ),
+                    ],
                   ),
-                  child: Text(
-                    'Perusahaan Baru',
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w600,
+                ),
+                WidgetHomeTitle(
+                  marginHor: 20,
+                  marginVer: 10,
+                  title: 'Akan Ditambahkan',
+                  fontSize: 16,
+                  fontWeight: FontWeight.w600,
+                ),
+                ListView(
+                  scrollDirection: Axis.vertical,
+                  shrinkWrap: true,
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.symmetric(vertical: 5, horizontal: 20),
+                      child: WidgetBaruDitambah(),
                     ),
-                  ),
+                    Padding(
+                      padding: EdgeInsets.symmetric(vertical: 5, horizontal: 20),
+                      child: WidgetBaruDitambah(),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.symmetric(vertical: 5, horizontal: 20),
+                      child: WidgetBaruDitambah(),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 20,
                 ),
               ],
             ),

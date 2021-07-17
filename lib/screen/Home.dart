@@ -24,7 +24,9 @@ class HomeScreen extends StatelessWidget {
               greeting: 'Selamat Datang,',
               name: name!,
             ),
-            WidgetHomeContent(),
+            SingleChildScrollView(
+              child: WidgetHomeContent(),
+            ),
           ],
         ),
       ),
