@@ -3,7 +3,17 @@ import 'package:flutter/material.dart';
 import 'WidgetHomeTitle.dart';
 import 'WidgetHomeTitleWithIcon.dart';
 
+// ignore: must_be_immutable
 class WidgetBaruDitambah extends StatelessWidget {
+  String logo, lokasi, bagian, nama;
+
+  WidgetBaruDitambah({
+    required this.logo,
+    required this.lokasi,
+    required this.bagian,
+    required this.nama,
+  });
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -18,7 +28,7 @@ class WidgetBaruDitambah extends StatelessWidget {
           Container(
             margin: EdgeInsets.symmetric(horizontal: 30, vertical: 20),
             child: Image.asset(
-              'images/traveloka.png',
+              logo,
               height: 60,
             ),
           ),
@@ -31,14 +41,14 @@ class WidgetBaruDitambah extends StatelessWidget {
                   marginHor: 10,
                   marginVer: 2,
                   fontSize: 18,
-                  title: 'Ilustrator UX',
+                  title: bagian,
                   fontWeight: FontWeight.w600,
                 ),
                 WidgetHomeTitle(
                   marginHor: 10,
                   marginVer: 3,
                   fontSize: 14,
-                  title: 'Traveloka',
+                  title: nama,
                   fontFamily: 'Nunito',
                   fontWeight: FontWeight.w700,
                   fontColor: Colors.black87,
@@ -49,7 +59,7 @@ class WidgetBaruDitambah extends StatelessWidget {
                   icon: Icons.location_on,
                   iconColor: Color(0xff2DA83E),
                   iconSize: 20,
-                  title: 'Sudirman Tower',
+                  title: lokasi,
                   fontFamily: 'Nunito',
                   fontweight: FontWeight.w600,
                   fontSize: 14,

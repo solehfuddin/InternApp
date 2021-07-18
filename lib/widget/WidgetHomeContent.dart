@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:internship_app/model/DataPerusahaanAktif.dart';
+import 'package:internship_app/model/DataPerusahaanBaru.dart';
+import 'package:internship_app/screen/Detail.dart';
 import 'package:internship_app/widget/WidgetBaruDitambah.dart';
 import 'package:internship_app/widget/WidgetSedangProses.dart';
 
 import 'WidgetHomeTitle.dart';
 
+// ignore: must_be_immutable
 class WidgetHomeContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -34,23 +38,30 @@ class WidgetHomeContent extends StatelessWidget {
                   fontWeight: FontWeight.w600,
                 ),
                 Container(
-                  height: 230,
-                  child: ListView(
+                  height: 195,
+                  child: ListView.builder(
                     scrollDirection: Axis.horizontal,
-                    children: [
-                      Padding(
-                        padding: EdgeInsets.only(left: 20, right: 5),
-                        child: WidgetSedangProses(),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.all(5),
-                        child: WidgetSedangProses(),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(left: 5, right: 20),
-                        child: WidgetSedangProses(),
-                      ),
-                    ],
+                    itemBuilder: (context, index) {
+                      final DataPerusahaanAktif activeComp =
+                          dataPerusahaanAktifList[index];
+                      return Padding(
+                        padding: EdgeInsets.only(left: activeComp.padLeft, right: activeComp.padRight),
+                        child: WidgetSedangProses(
+                          logo: activeComp.logo,
+                          lokasi: activeComp.lokasi,
+                          durasi: activeComp.durasi,
+                          bagian: activeComp.bagian,
+                          nama: activeComp.nama,
+                          peminat: activeComp.peminat,
+                          onPressed: () {
+                            Navigator.push(context, MaterialPageRoute(builder: (context) {
+                              return DetailScreen(actComp: activeComp);
+                            }));
+                          },
+                        ),
+                      );
+                    },
+                    itemCount: dataPerusahaanAktifList.length,
                   ),
                 ),
                 WidgetHomeTitle(
@@ -60,23 +71,26 @@ class WidgetHomeContent extends StatelessWidget {
                   fontSize: 16,
                   fontWeight: FontWeight.w600,
                 ),
-                ListView(
+                ListView.builder(
                   scrollDirection: Axis.vertical,
                   shrinkWrap: true,
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.symmetric(vertical: 5, horizontal: 20),
-                      child: WidgetBaruDitambah(),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.symmetric(vertical: 5, horizontal: 20),
-                      child: WidgetBaruDitambah(),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.symmetric(vertical: 5, horizontal: 20),
-                      child: WidgetBaruDitambah(),
-                    ),
-                  ],
+                  itemBuilder: (context, index) {
+                    final DataPerusahaanBaru newComp =
+                        dataPerusahaanBaruList[index];
+                    return Padding(
+                      padding: EdgeInsets.symmetric(
+                        vertical: 5,
+                        horizontal: 20,
+                      ),
+                      child: WidgetBaruDitambah(
+                        logo: newComp.logo,
+                        lokasi: newComp.lokasi,
+                        bagian: newComp.bagian,
+                        nama: newComp.nama,
+                      ),
+                    );
+                  },
+                  itemCount: dataPerusahaanBaruList.length,
                 ),
                 SizedBox(
                   height: 20,

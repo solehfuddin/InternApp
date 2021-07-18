@@ -12,22 +12,26 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: "Intership app",
-      theme: ThemeData(),
+      theme: ThemeData(
+        primarySwatch: Colors.green,
+      ),
       home: Scaffold(
         backgroundColor: Colors.white,
-        body: Stack(
-          children: [
-            WidgetHomeAppbar(
-              bgColor: Color(0xff304572),
-              padding: 20,
-              imgProfile: 'images/person.jpg',
-              greeting: 'Selamat Datang,',
-              name: name!,
-            ),
-            SingleChildScrollView(
-              child: WidgetHomeContent(),
-            ),
-          ],
+        body: SafeArea(
+          child: Stack(
+            children: [
+              WidgetHomeAppbar(
+                bgColor: Color(0xff304572),
+                padding: 20,
+                imgProfile: 'images/person.jpg',
+                greeting: 'Selamat Datang,',
+                name: name!,
+              ),
+              SingleChildScrollView(
+                child: WidgetHomeContent(),
+              ),
+            ],
+          ),
         ),
       ),
     );

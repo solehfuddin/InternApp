@@ -8,7 +8,8 @@ import 'package:internship_app/screen/Login.dart';
 class IntroScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
+    return SafeArea(
+        child: SingleChildScrollView(
       child: Container(
         color: Colors.white,
         child: Column(
@@ -72,6 +73,6 @@ class IntroScreen extends StatelessWidget {
           ],
         ),
       ),
-    );
+    ));
   }
 }

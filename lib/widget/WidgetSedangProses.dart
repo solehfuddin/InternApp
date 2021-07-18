@@ -2,12 +2,26 @@ import 'package:flutter/material.dart';
 import 'package:internship_app/widget/WidgetHomeTitle.dart';
 import 'package:internship_app/widget/WidgetHomeTitleWithIcon.dart';
 
+// ignore: must_be_immutable
 class WidgetSedangProses extends StatelessWidget {
+  String nama, logo, lokasi, durasi, bagian, peminat;
+  final onPressed;
+
+  WidgetSedangProses({
+    required this.nama,
+    required this.logo,
+    required this.lokasi,
+    required this.durasi,
+    required this.bagian,
+    required this.peminat,
+    this.onPressed,
+  });
+
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 270,
-      height: 200,
+      width: 290,
+      height: 120,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.all(Radius.circular(15)),
         color: Color(0xffFFFBFF),
@@ -20,8 +34,8 @@ class WidgetSedangProses extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
                 child: Image.asset(
-                  'images/tokped.png',
-                  height: 60,
+                  this.logo,
+                  height: 45,
                 ),
               ),
               Column(
@@ -30,15 +44,15 @@ class WidgetSedangProses extends StatelessWidget {
                   WidgetHomeTitle(
                     marginHor: 0,
                     marginVer: 5,
-                    fontSize: 18,
-                    title: 'Desainer UI / UX',
+                    fontSize: 16,
+                    title: this.bagian,
                     fontWeight: FontWeight.w600,
                   ),
                   WidgetHomeTitle(
                     marginHor: 0,
                     marginVer: 0,
                     fontSize: 14,
-                    title: 'Tokopedia',
+                    title: this.nama,
                     fontFamily: 'Nunito',
                     fontWeight: FontWeight.w600,
                   ),
@@ -52,7 +66,7 @@ class WidgetSedangProses extends StatelessWidget {
             icon: Icons.location_on,
             iconColor: Color(0xff2DA83E),
             iconSize: 22,
-            title: 'Jakarta',
+            title: this.lokasi,
             fontFamily: 'Nunito',
             fontweight: FontWeight.w600,
             fontSize: 16,
@@ -63,11 +77,11 @@ class WidgetSedangProses extends StatelessWidget {
             marginHor: 15,
             icon: Icons.calendar_today,
             iconColor: Color(0xff2DA83E),
-            iconSize: 22,
-            title: '6 Bulan',
+            iconSize: 20,
+            title: this.durasi,
             fontFamily: 'Nunito',
             fontweight: FontWeight.w600,
-            fontSize: 16,
+            fontSize: 15,
             fontColor: Colors.black87,
           ),
           Row(
@@ -75,7 +89,7 @@ class WidgetSedangProses extends StatelessWidget {
               Container(
                 margin: EdgeInsets.symmetric(horizontal: 15, vertical: 5),
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: onPressed,
                   child: Padding(
                     padding: EdgeInsets.symmetric(vertical: 7, horizontal: 35),
                     child: Text(
@@ -101,7 +115,7 @@ class WidgetSedangProses extends StatelessWidget {
                 ),
               ),
               Text(
-                '100 Pelamar',
+                peminat,
                 style: TextStyle(
                   fontSize: 12,
                   color: Colors.grey,
