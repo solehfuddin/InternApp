@@ -10,6 +10,7 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: "Internship app",
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(),
       home: Scaffold(
         backgroundColor: Colors.white,

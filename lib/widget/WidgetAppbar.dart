@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class WidgetAppbar extends StatelessWidget {
+  String title;
   final onPressed;
 
   WidgetAppbar({
     this.onPressed,
+    required this.title,
   });
 
   @override
@@ -29,7 +32,7 @@ class WidgetAppbar extends StatelessWidget {
             child: Padding(
               padding: EdgeInsets.only(right: 35),
               child: Text(
-                'Registrasi',
+                title,
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 18,

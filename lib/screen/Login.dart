@@ -20,6 +20,7 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Internship app',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.green,
       ),
@@ -32,6 +33,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 child: Column(
                   children: [
                     WidgetAppbar(
+                      title: 'Registrasi',
                       onPressed: () {
                         Navigator.pop(context);
                       },
