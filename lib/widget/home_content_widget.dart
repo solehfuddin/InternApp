@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:internship_app/model/DataPerusahaanAktif.dart';
-import 'package:internship_app/model/DataPerusahaanBaru.dart';
-import 'package:internship_app/screen/Detail.dart';
-import 'package:internship_app/widget/WidgetBaruDitambah.dart';
-import 'package:internship_app/widget/WidgetSedangProses.dart';
+import 'package:internship_app/model/data_perusahaan_aktif.dart';
+import 'package:internship_app/model/data_perusahaan_baru.dart';
+import 'package:internship_app/screen/detail_screen.dart';
+import 'package:internship_app/widget/new_process_widget.dart';
+import 'package:internship_app/widget/active_process_widget.dart';
 
-import 'WidgetHomeTitle.dart';
+import 'home_title_widget.dart';
 
 // ignore: must_be_immutable
-class WidgetHomeContent extends StatelessWidget {
+class HomeContentWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -30,7 +30,7 @@ class WidgetHomeContent extends StatelessWidget {
                   margin: EdgeInsets.all(20),
                   child: Image.asset('images/banner.png'),
                 ),
-                WidgetHomeTitle(
+                HomeTitleWidget(
                   marginHor: 20,
                   marginVer: 10,
                   title: 'Sedang Diproses',
@@ -46,7 +46,7 @@ class WidgetHomeContent extends StatelessWidget {
                           dataPerusahaanAktifList[index];
                       return Padding(
                         padding: EdgeInsets.only(left: activeComp.padLeft, right: activeComp.padRight),
-                        child: WidgetSedangProses(
+                        child: ActiveProcessWidget(
                           logo: activeComp.logo,
                           lokasi: activeComp.lokasi,
                           durasi: activeComp.durasi,
@@ -64,7 +64,7 @@ class WidgetHomeContent extends StatelessWidget {
                     itemCount: dataPerusahaanAktifList.length,
                   ),
                 ),
-                WidgetHomeTitle(
+                HomeTitleWidget(
                   marginHor: 20,
                   marginVer: 10,
                   title: 'Akan Ditambahkan',
@@ -82,7 +82,7 @@ class WidgetHomeContent extends StatelessWidget {
                         vertical: 5,
                         horizontal: 20,
                       ),
-                      child: WidgetBaruDitambah(
+                      child: NewProcessWidget(
                         logo: newComp.logo,
                         lokasi: newComp.lokasi,
                         bagian: newComp.bagian,

@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-import 'WidgetHomeTitle.dart';
-import 'WidgetHomeTitleWithIcon.dart';
+import 'home_title_widget.dart';
+import 'home_title_icon_widget.dart';
 
 // ignore: must_be_immutable
-class WidgetBaruDitambah extends StatelessWidget {
+class NewProcessWidget extends StatelessWidget {
   String logo, lokasi, bagian, nama;
 
-  WidgetBaruDitambah({
+  NewProcessWidget({
     required this.logo,
     required this.lokasi,
     required this.bagian,
@@ -37,14 +37,14 @@ class WidgetBaruDitambah extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                WidgetHomeTitle(
+                HomeTitleWidget(
                   marginHor: 10,
                   marginVer: 2,
                   fontSize: 18,
                   title: bagian,
                   fontWeight: FontWeight.w600,
                 ),
-                WidgetHomeTitle(
+                HomeTitleWidget(
                   marginHor: 10,
                   marginVer: 3,
                   fontSize: 14,
@@ -53,7 +53,7 @@ class WidgetBaruDitambah extends StatelessWidget {
                   fontWeight: FontWeight.w700,
                   fontColor: Colors.black87,
                 ),
-                WidgetHomeTitleWithIcon(
+                HomeTitleIconWidget(
                   marginVer: 2,
                   marginHor: 7,
                   icon: Icons.location_on,

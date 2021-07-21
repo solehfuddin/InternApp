@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:internship_app/widget/WidgetHomeTitle.dart';
-import 'package:internship_app/widget/WidgetHomeTitleWithIcon.dart';
+import 'package:internship_app/widget/detail_title_icon_widget.dart';
+import 'package:internship_app/widget/home_title_widget.dart';
 
 // ignore: must_be_immutable
-class WidgetDetailContent extends StatelessWidget {
+class DetailContentWidget extends StatelessWidget {
   String title;
   List<String> list;
 
-  WidgetDetailContent({
+  DetailContentWidget({
     required this.title,
     required this.list,
   });
@@ -23,7 +23,7 @@ class WidgetDetailContent extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            WidgetHomeTitle(
+            HomeTitleWidget(
               marginHor: 10,
               marginVer: 10,
               title: title,
@@ -36,7 +36,7 @@ class WidgetDetailContent extends StatelessWidget {
               shrinkWrap: true,
               itemBuilder: (context, index) {
                 final String item = list[index];
-                return WidgetHomeTitleWithIcon(
+                return DetailTitleIconWidget(
                   marginHor: 10,
                   marginVer: 3,
                   iconSize: 16,
@@ -50,28 +50,6 @@ class WidgetDetailContent extends StatelessWidget {
               },
               itemCount: list.length,
             ),
-            // WidgetHomeTitleWithIcon(
-            //   marginHor: 10,
-            //   marginVer: 3,
-            //   iconSize: 16,
-            //   title: 'Persyaratan pertama',
-            //   fontFamily: 'Nunito',
-            //   fontweight: FontWeight.w500,
-            //   fontSize: 12,
-            //   icon: Icons.album_outlined,
-            //   iconColor: Color(0xff2DA83E),
-            // ),
-            // WidgetHomeTitleWithIcon(
-            //   marginHor: 10,
-            //   marginVer: 3,
-            //   iconSize: 16,
-            //   title: 'Persyaratan kedua',
-            //   fontFamily: 'Nunito',
-            //   fontSize: 12,
-            //   fontweight: FontWeight.w500,
-            //   icon: Icons.album_outlined,
-            //   iconColor: Color(0xff2DA83E),
-            // ),
           ],
         ));
   }

@@ -1,10 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:internship_app/model/DataPerusahaanAktif.dart';
-import 'package:internship_app/widget/WidgetAppbar.dart';
-import 'package:internship_app/widget/WidgetDetailContent.dart';
-import 'package:internship_app/widget/WidgetDetailHeader.dart';
-import 'package:internship_app/widget/WidgetDynamicButton.dart';
+import 'package:internship_app/model/data_perusahaan_aktif.dart';
+import 'package:internship_app/widget/appbar_widget.dart';
+import 'package:internship_app/widget/detail_content_widget.dart';
+import 'package:internship_app/widget/detail_header_widget.dart';
+import 'package:internship_app/widget/dynamic_button_widget.dart';
+import 'package:internship_app/widget/favorite_button_widget.dart';
 
 // ignore: must_be_immutable
 class DetailScreen extends StatelessWidget {
@@ -26,27 +27,30 @@ class DetailScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              WidgetAppbar(
+              AppbarWidget(
                 onPressed: () {
                   Navigator.pop(context);
                 },
                 title: '',
               ),
-              WidgetDetailHeader(
+              DetailHeaderWidget(
                 logo: actComp.logo,
                 bagian: actComp.bagian,
                 durasi: actComp.durasi,
                 lokasi: actComp.lokasi,
               ),
-              WidgetDetailContent(
+              Center(
+                child: FavoriteButtonWidget(),
+              ),
+              DetailContentWidget(
                 title: 'Persyaratan : ',
                 list: actComp.persyaratan,
               ),
-              WidgetDetailContent(
+              DetailContentWidget(
                 title: 'Benefit : ',
                 list: actComp.benefit,
               ),
-              WidgetDynamicButton(
+              DynamicButtonWidget(
                 outerPadding: 15,
                 innerPadding: 8,
                 fontSize: 14,

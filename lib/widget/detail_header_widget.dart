@@ -1,12 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:internship_app/widget/WidgetHomeTitle.dart';
-import 'package:internship_app/widget/WidgetHomeTitleWithIcon.dart';
+import 'package:internship_app/widget/home_title_widget.dart';
+import 'package:internship_app/widget/home_title_icon_widget.dart';
 
-class WidgetDetailHeader extends StatelessWidget {
+// ignore: must_be_immutable
+class DetailHeaderWidget extends StatelessWidget {
   String logo, bagian, durasi, lokasi;
 
-  WidgetDetailHeader({
+  DetailHeaderWidget({
     required this.logo,
     required this.bagian,
     required this.durasi,
@@ -23,7 +24,7 @@ class WidgetDetailHeader extends StatelessWidget {
           width: 80,
           height: 80,
         ),
-        WidgetHomeTitle(
+        HomeTitleWidget(
           marginHor: 0,
           marginVer: 13,
           fontSize: 16,
@@ -33,7 +34,7 @@ class WidgetDetailHeader extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            WidgetHomeTitle(
+            HomeTitleWidget(
               marginHor: 0,
               marginVer: 0,
               fontSize: 12,
@@ -41,7 +42,7 @@ class WidgetDetailHeader extends StatelessWidget {
               fontFamily: 'Nunito',
               fontWeight: FontWeight.w600,
             ),
-            WidgetHomeTitleWithIcon(
+            HomeTitleIconWidget(
               marginHor: 0,
               marginVer: 0,
               iconSize: 16,

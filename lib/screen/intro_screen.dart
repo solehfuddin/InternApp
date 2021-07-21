@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:internship_app/widget/WidgetDynamicButton.dart';
-import 'package:internship_app/widget/WidgetIntroContent.dart';
-import 'package:internship_app/widget/WidgetIntroImage.dart';
-import 'package:internship_app/widget/WidgetIntroTitle.dart';
-import 'package:internship_app/screen/Login.dart';
+import 'package:internship_app/widget/dynamic_button_widget.dart';
+import 'package:internship_app/widget/intro_content_widget.dart';
+import 'package:internship_app/widget/intro_image_widget.dart';
+import 'package:internship_app/widget/intro_title_widget.dart';
+import 'package:internship_app/screen/login_screen.dart';
 
 class IntroScreen extends StatelessWidget {
   @override
@@ -14,7 +14,7 @@ class IntroScreen extends StatelessWidget {
         color: Colors.white,
         child: Column(
           children: [
-            WidgetIntroTitle(
+            IntroTitleWidget(
               spaceTop: 50,
               spaceLine: 7,
               fontSize: 30,
@@ -24,7 +24,7 @@ class IntroScreen extends StatelessWidget {
               textTopPrimary: "Mau",
               textTopSecond: "Magang",
             ),
-            WidgetIntroTitle(
+            IntroTitleWidget(
               spaceTop: 10,
               spaceLine: 7,
               fontSize: 30,
@@ -34,12 +34,12 @@ class IntroScreen extends StatelessWidget {
               textTopPrimary: "Sesuai",
               textTopSecond: "Keinginanmu ?",
             ),
-            WidgetIntroImage(
+            IntroImageWidget(
               imgWidth: 320,
               imgHeight: 320,
               localImg: 'images/intern.jpg',
             ),
-            WidgetIntroContent(
+            IntroContentWidget(
               description:
                   'Temukan tempat magang sesuai keinginan dan raih kesempatan untuk gabung diperusahaan impianmu',
               fontSize: 16,
@@ -50,7 +50,7 @@ class IntroScreen extends StatelessWidget {
             SizedBox(
               height: 25,
             ),
-            WidgetDynamicButton(
+            DynamicButtonWidget(
               outerPadding: 40,
               innerPadding: 10,
               title: 'Ayo Mulai',

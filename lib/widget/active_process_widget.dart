@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:internship_app/widget/WidgetHomeTitle.dart';
-import 'package:internship_app/widget/WidgetHomeTitleWithIcon.dart';
+import 'package:internship_app/widget/home_title_widget.dart';
+import 'package:internship_app/widget/home_title_icon_widget.dart';
 
 // ignore: must_be_immutable
-class WidgetSedangProses extends StatelessWidget {
+class ActiveProcessWidget extends StatelessWidget {
   String nama, logo, lokasi, durasi, bagian, peminat;
   final onPressed;
 
-  WidgetSedangProses({
+  ActiveProcessWidget({
     required this.nama,
     required this.logo,
     required this.lokasi,
@@ -41,14 +41,14 @@ class WidgetSedangProses extends StatelessWidget {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  WidgetHomeTitle(
+                  HomeTitleWidget(
                     marginHor: 0,
                     marginVer: 5,
                     fontSize: 16,
                     title: this.bagian,
                     fontWeight: FontWeight.w600,
                   ),
-                  WidgetHomeTitle(
+                  HomeTitleWidget(
                     marginHor: 0,
                     marginVer: 0,
                     fontSize: 14,
@@ -60,7 +60,7 @@ class WidgetSedangProses extends StatelessWidget {
               ),
             ],
           ),
-          WidgetHomeTitleWithIcon(
+          HomeTitleIconWidget(
             marginVer: 5,
             marginHor: 15,
             icon: Icons.location_on,
@@ -72,7 +72,7 @@ class WidgetSedangProses extends StatelessWidget {
             fontSize: 16,
             fontColor: Colors.black87,
           ),
-          WidgetHomeTitleWithIcon(
+          HomeTitleIconWidget(
             marginVer: 5,
             marginHor: 15,
             icon: Icons.calendar_today,

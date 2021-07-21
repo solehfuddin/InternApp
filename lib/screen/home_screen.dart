@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:internship_app/widget/WidgetHomeAppbar.dart';
-import 'package:internship_app/widget/WidgetHomeContent.dart';
+import 'package:internship_app/widget/home_appbar_widget.dart';
+import 'package:internship_app/widget/home_content_widget.dart';
 
 // ignore: must_be_immutable
 class HomeScreen extends StatelessWidget {
@@ -21,7 +21,7 @@ class HomeScreen extends StatelessWidget {
         body: SafeArea(
           child: Stack(
             children: [
-              WidgetHomeAppbar(
+              HomeAppbarWidget(
                 bgColor: Color(0xff304572),
                 padding: 20,
                 imgProfile: 'images/person.jpg',
@@ -29,7 +29,7 @@ class HomeScreen extends StatelessWidget {
                 name: name!,
               ),
               SingleChildScrollView(
-                child: WidgetHomeContent(),
+                child: HomeContentWidget(),
               ),
             ],
           ),

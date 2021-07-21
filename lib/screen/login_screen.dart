@@ -1,19 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:internship_app/screen/Home.dart';
-import 'package:internship_app/widget/WidgetAppbar.dart';
-import 'package:internship_app/widget/WidgetDynamicButton.dart';
-import 'package:internship_app/widget/WidgetIntroContent.dart';
-import 'package:internship_app/widget/WidgetIntroImage.dart';
-import 'package:internship_app/widget/WidgetIntroTitle.dart';
-import 'package:internship_app/widget/WidgetTextInput.dart';
-import 'package:internship_app/widget/WidgetTextTitle.dart';
+import 'package:internship_app/screen/home_screen.dart';
+import 'package:internship_app/widget/appbar_widget.dart';
+import 'package:internship_app/widget/dynamic_button_widget.dart';
+import 'package:internship_app/widget/intro_content_widget.dart';
+import 'package:internship_app/widget/intro_image_widget.dart';
+import 'package:internship_app/widget/intro_title_widget.dart';
+import 'package:internship_app/widget/text_input_widget.dart';
+import 'package:internship_app/widget/text_title_widget.dart';
 
-class LoginScreen extends StatefulWidget {
-  @override
-  _LoginScreenState createState() => _LoginScreenState();
-}
-
-class _LoginScreenState extends State<LoginScreen> {
+// ignore: must_be_immutable
+class LoginScreen extends StatelessWidget {
   TextEditingController _controller = TextEditingController();
 
   @override
@@ -27,23 +23,23 @@ class _LoginScreenState extends State<LoginScreen> {
       home: Scaffold(
         backgroundColor: Colors.white,
         body: SafeArea(
-          child: SingleChildScrollView(
+            child: SingleChildScrollView(
               child: Container(
                 color: Colors.white,
                 child: Column(
                   children: [
-                    WidgetAppbar(
+                    AppbarWidget(
                       title: 'Registrasi',
                       onPressed: () {
                         Navigator.pop(context);
                       },
                     ),
-                    WidgetIntroImage(
+                    IntroImageWidget(
                       imgWidth: 250,
                       imgHeight: 250,
                       localImg: 'images/internship.png',
                     ),
-                    WidgetIntroTitle(
+                    IntroTitleWidget(
                       spaceTop: 5,
                       spaceLine: 7,
                       fontSize: 24,
@@ -54,7 +50,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       textTopSecond: "Datang",
                     ),
                     SizedBox(height: 15),
-                    WidgetIntroContent(
+                    IntroContentWidget(
                       description:
                       'Langkah selanjutnya masukkan data berikut, supaya kamu bisa segera bergabung dan ajukan magang diperusahaan impianmu',
                       fontSize: 16,
@@ -65,7 +61,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     SizedBox(
                       height: 25,
                     ),
-                    WidgetTextTitle(
+                    TextTitleWidget(
                       horizontalMargin: 40,
                       textTitle: "Nama Lengkap",
                       fontSize: 16,
@@ -73,7 +69,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       fontWeight: FontWeight.bold,
                       textColor: Colors.black54,
                     ),
-                    WidgetTextInput(
+                    TextInputWidget(
                       horizontalMargin: 40,
                       borderRadius: 10,
                       fontSize: 16,
@@ -87,7 +83,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     SizedBox(
                       height: 25,
                     ),
-                    WidgetDynamicButton(
+                    DynamicButtonWidget(
                       outerPadding: 40,
                       innerPadding: 10,
                       fontSize: 20,
@@ -130,10 +126,5 @@ class _LoginScreenState extends State<LoginScreen> {
       ),
     );
   }
-
-  @override
-  void dispose() {
-    _controller.dispose();
-    super.dispose();
-  }
 }
+

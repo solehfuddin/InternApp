@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
-class WidgetIntroImage extends StatelessWidget {
+class IntroImageWidget extends StatelessWidget {
   double imgWidth = 0;
   double imgHeight = 0;
 
   String localImg;
 
-  WidgetIntroImage({
+  IntroImageWidget({
     required this.imgWidth,
     required this.imgHeight,
     required this.localImg,

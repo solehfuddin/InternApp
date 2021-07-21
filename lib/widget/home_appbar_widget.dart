@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
-class WidgetHomeAppbar extends StatelessWidget {
+class HomeAppbarWidget extends StatelessWidget {
   double? padding;
   String greeting = "Selamat datang,";
   String name = "Muhamad Solehfuddin";
@@ -9,7 +9,7 @@ class WidgetHomeAppbar extends StatelessWidget {
   final bgColor;
   final imgProfile;
 
-  WidgetHomeAppbar(
+  HomeAppbarWidget(
       {this.bgColor,
       this.padding,
       this.imgProfile,

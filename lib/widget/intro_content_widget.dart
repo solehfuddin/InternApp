@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
-class WidgetIntroContent extends StatelessWidget {
+class IntroContentWidget extends StatelessWidget {
   String description;
   String fontFamily;
   double fontSize = 0;
   final fontWeight;
   final fontColor;
 
-  WidgetIntroContent({
+  IntroContentWidget({
     required this.description,
     required this.fontSize,
     required this.fontFamily,

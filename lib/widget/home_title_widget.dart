@@ -1,39 +1,40 @@
 import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
-class WidgetTextTitle extends StatelessWidget {
-  double horizontalMargin = 0;
-  double fontSize = 0;
+class HomeTitleWidget extends StatelessWidget {
+  double marginHor = 0;
+  double marginVer = 0;
+  double fontSize  = 0;
 
-  String textTitle;
+  String title;
   final fontFamily;
   final fontWeight;
-  final textColor;
+  final fontColor;
 
-  WidgetTextTitle({
-    required this.horizontalMargin,
-    required this.textTitle,
+  HomeTitleWidget({
+    required this.marginHor,
+    required this.marginVer,
     required this.fontSize,
+    required this.title,
     this.fontFamily,
     this.fontWeight,
-    this.textColor,
+    this.fontColor,
   });
 
   @override
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.symmetric(
-        horizontal: horizontalMargin,
-        vertical: 7,
+        horizontal: marginHor,
+        vertical: marginVer,
       ),
-      alignment: Alignment.topLeft,
       child: Text(
-        textTitle,
+        title,
         style: TextStyle(
           fontSize: fontSize,
-          fontFamily: fontFamily,
           fontWeight: fontWeight,
-          color: textColor,
+          color: fontColor,
+          fontFamily: fontFamily,
         ),
       ),
     );

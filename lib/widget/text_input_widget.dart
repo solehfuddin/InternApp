@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
-class WidgetTextInput extends StatefulWidget {
+class TextInputWidget extends StatelessWidget {
   double horizontalMargin = 0;
   double fontSize = 0;
   double borderRadius;
@@ -14,7 +14,7 @@ class WidgetTextInput extends StatefulWidget {
 
   var controller;
 
-  WidgetTextInput({
+  TextInputWidget({
     required this.horizontalMargin,
     required this.fontSize,
     required this.borderRadius,
@@ -27,36 +27,32 @@ class WidgetTextInput extends StatefulWidget {
   });
 
   @override
-  _WidgetTextInputState createState() => _WidgetTextInputState();
-}
-
-class _WidgetTextInputState extends State<WidgetTextInput> {
-  @override
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.symmetric(
-        horizontal: widget.horizontalMargin,
+        horizontal: horizontalMargin,
       ),
       child: TextField(
-        controller: widget.controller,
+        controller: controller,
         style: TextStyle(
           color: Colors.black87,
-          fontSize: widget.fontSize,
-          fontFamily: widget.fontFamily,
-          fontWeight: widget.fontWeight,
+          fontSize: fontSize,
+          fontFamily: fontFamily,
+          fontWeight: fontWeight,
         ),
         decoration: InputDecoration(
           border: OutlineInputBorder(
             borderRadius: BorderRadius.all(
-              Radius.circular(widget.borderRadius),
+              Radius.circular(borderRadius),
             ),
           ),
           filled: true,
-          hintStyle: TextStyle(color: widget.hintColor),
-          hintText: widget.hintText,
-          fillColor: widget.bgColor,
+          hintStyle: TextStyle(color: hintColor),
+          hintText: hintText,
+          fillColor: bgColor,
         ),
       ),
     );
   }
 }
+

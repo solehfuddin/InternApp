@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
-class WidgetAppbar extends StatelessWidget {
+class AppbarWidget extends StatelessWidget {
   String title;
   final onPressed;
 
-  WidgetAppbar({
+  AppbarWidget({
     this.onPressed,
     required this.title,
   });

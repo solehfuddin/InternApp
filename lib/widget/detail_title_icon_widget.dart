@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
-class WidgetHomeTitleWithIcon extends StatelessWidget {
+class DetailTitleIconWidget extends StatelessWidget {
   double marginHor = 0;
   double marginVer = 0;
-  double iconSize  = 0;
-  double fontSize  = 0;
+  double iconSize = 0;
+  double fontSize = 0;
 
   String title, fontFamily;
   final icon;
@@ -13,7 +13,7 @@ class WidgetHomeTitleWithIcon extends StatelessWidget {
   final fontweight;
   final fontColor;
 
-  WidgetHomeTitleWithIcon({
+  DetailTitleIconWidget({
     required this.marginHor,
     required this.marginVer,
     required this.iconSize,
@@ -38,13 +38,14 @@ class WidgetHomeTitleWithIcon extends StatelessWidget {
             color: iconColor,
             size: iconSize,
           ),
-          Padding(
-            padding: EdgeInsets.symmetric(
-              horizontal: 5,
-              vertical: 2,
-            ),
+          SizedBox(
+            width: 7,
+            height: 1.5,
+          ),
+          Flexible(
             child: Text(
               title,
+              overflow: TextOverflow.visible,
               style: TextStyle(
                 fontFamily: fontFamily,
                 fontWeight: fontweight,

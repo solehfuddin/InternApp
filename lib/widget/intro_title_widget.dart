@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
-class WidgetIntroTitle extends StatelessWidget {
+class IntroTitleWidget extends StatelessWidget {
   double spaceTop = 0;
   double spaceLine = 0;
   double fontSize = 0;
@@ -13,7 +13,7 @@ class WidgetIntroTitle extends StatelessWidget {
   final secondColor;
   final fontweight;
 
-  WidgetIntroTitle({
+  IntroTitleWidget({
     required this.spaceTop,
     required this.spaceLine,
     required this.fontSize,

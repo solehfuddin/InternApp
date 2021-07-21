@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
-class WidgetDynamicButton extends StatelessWidget {
+class DynamicButtonWidget extends StatelessWidget {
   double outerPadding = 0;
   double innerPadding = 0;
   double fontSize = 0;
@@ -15,7 +15,7 @@ class WidgetDynamicButton extends StatelessWidget {
   final borderColor;
   final onPressed;
 
-  WidgetDynamicButton({
+  DynamicButtonWidget({
     required this.outerPadding,
     required this.innerPadding,
     required this.fontSize,
